@@ -1,6 +1,6 @@
 # Testing Strategy Summary for Loan Management System Challenge
 
-**Author:** Kanyi
+**Author:** Melissa Kanyi
 
 This document outlines a comprehensive testing strategy for the Loan Management System, focusing on the core functionalities:
 
