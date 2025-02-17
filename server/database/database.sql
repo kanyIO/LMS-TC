@@ -55,6 +55,10 @@ CREATE TABLE payments (
 );
 
 -- Data insertion
+--admin
+INSERT INTO admin (id, firstName, lastName, contactNumber, email, address, password, username)
+VALUES ('2', 'One', 'Man', '0722098098', 'first@gmail.com', 'first close str', '1234', '1man');
+--client
 INSERT INTO clients(firstname, lastname, contactnumber, email, address, username)
 VALUES
     ('Elon', 'Musk', 444333, 'elonmusk@gmail.com', 'Boca Chica, Texas',  'notElonMusk'),
@@ -70,3 +74,7 @@ VALUES (1, 5000, 5000, 2500, 1, '2023-02-04 05:30:01', '2023-03-04', 'Personal L
 -- Insert payments after both clients and loans exist
 INSERT INTO payments(client_id, loan_id, amount, new_balance, collection_date, collected_by, method)
 VALUES (1, 1, 5000, 0, '2023-03-04', 'admin', 'ATM');
+ 
+
+
+--  additions

@@ -96,6 +96,14 @@ INSERT INTO payments (client_id, id, amount, new_balance, collection_date, colle
 VALUES (3, 8, 7200.00, 3400.00, NOW(),'System', 'Online'); 
 SELECT * FROM payments; -- Validate the insertion
 
+-- create duplicate enter of admin
+INSERT INTO admins (id, firstName, lastName, contactNumber, email, address, password, username)
+VALUES ('2', 'One', 'Man', '0722098098', 'first@gmail.com', 'first close str', '1234', '1man');
+INSERT 0 1
+ERROR:  duplicate key value violates unique constraint "admin_pkey"
+DETAIL:  Key (id)=(2) already exists.
+
+
 -- Delete payment data for payment id=1
 SELECT * FROM loans ; -- to verify existing client data
 DELETE FROM payments WHERE id = 1;
@@ -105,7 +113,7 @@ SELECT * FROM payments; -- Validate the deletion
 UPDATE admins SET firstname='Gachanja',lastname='Man',contactnumber='0722124321',email='man.gach@gmail.com',address='Likoni Road' WHERE id=4;
 
 -- DELETE should fail because of payment_client constraint
-DELETE FROM admins WHERE id=2;
+ DELETE FROM admins WHERE username = 'kanairo';
 
 -- Admins
 -- update admins
